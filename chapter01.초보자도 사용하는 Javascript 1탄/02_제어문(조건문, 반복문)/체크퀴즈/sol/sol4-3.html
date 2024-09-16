@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const search = prompt('찾는 단어를 입력하세요', '')
+         const dict = ['다소니', '가람', '미르', '미리내', '그린내', '마루', '비나리']
+
+         if (dict.indexOf(search) !== -1) {
+            const idx = dict.indexOf(search)
+            console.log(dict[idx])
+         } else {
+            console.log('찾는 단어가 사전에 없습니다.')
+         }
+      </script>
+   </body>
+</html>
