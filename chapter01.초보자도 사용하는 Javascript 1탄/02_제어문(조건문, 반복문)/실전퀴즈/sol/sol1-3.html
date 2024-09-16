@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    var grade = prompt("학년 입력", 0);
+    var score = prompt("점수 입력", 0);
+    var msg = "에러입니다.";
+
+    if (0 <= score && score <= 100) { //점수가 0이상 이면서 100이하(정상입력)
+        // case1
+        // if(grade == 4) {  //4학년일때
+        //     if(score >=70) {
+        //         msg = "합격";
+        //     } else {
+        //         msg= "불합격";
+        //     } 
+        // } else {       //4학년이 아닐때
+        //     if(score >=60) {
+        //         msg = "합격";
+        //     } else {
+        //         msg= "불합격";
+        //     }    
+        // }
+        // case2
+        if(grade == 4 && score >= 70) {  // 4학년 이면서 70점 이상일때
+            msg = "합격";
+        } else if((grade < 4 || grade > 4) && score >= 60){  //4학년 미만 혹은 4학년 초과 이면서 60점 이상일때
+            msg = "합격";
+        } else {
+            msg = "불합격";
+        }
+
+        document.write(msg);
+    } else {
+        alert(msg);
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    var subject = prompt("과목입력", "");
+    var code;
+
+    switch(subject) {
+        case "수학": code = "01";
+        break;
+        case "영어": code = "02";
+        break;
+        case "국어": code = "03";
+        break; 
+        case "국사": code = "04";
+        break;
+        default : code = "00";
+    }
+
+    document.write("과목코드: " + code);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
