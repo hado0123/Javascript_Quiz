@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const height = 180
+         const weight = 80
+
+         function weightAvg(height, weight) {
+            const avg = (height - 100) * 0.9
+            return avg
+         }
+
+         function bmi(height, weight) {
+            const bmi = weight / ((height * height) / 10000)
+            let result = '결과값 없음'
+
+            if (bmi >= 40) {
+               result = '고도비만'
+            } else if (bmi >= 30) {
+               result = '비만'
+            } else if (bmi >= 25) {
+               result = '과체중'
+            } else if (bmi >= 20) {
+               result = '정상'
+            } else {
+               result = '저체중'
+            }
+
+            return result
+         }
+
+         document.write(`당신의 적정몸무게는${weightAvg(height, weight)} 이고,
+                         당신의 bmi는 ${bmi(height, weight)}입니다.`)
+      </script>
+   </body>
+</html>

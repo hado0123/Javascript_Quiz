@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         var num1 = Number(prompt('숫자 입력', 0))
+         var num2 = Number(prompt('숫자 입력', 0))
+
+         const add = (a, b) => {
+            var result = a + b
+            return result
+         }
+
+         const sub = (a, b) => {
+            var result = a - b
+            return result
+         }
+
+         const division = (a, b) => {
+            var result = a / b
+            return result
+         }
+
+         const multiple = (a, b) => {
+            var result = a * b
+            return result
+         }
+
+         document.write(`덧셈: ${add(num1, num2)} <br />`)
+         document.write(`뺄셈: ${sub(num1, num2)} <br />`)
+         document.write(`나눗셈: ${division(num1, num2)} <br />`)
+         document.write(`곱셈: ${multiple(num1, num2)} <br />`)
+      </script>
+   </body>
+</html>
