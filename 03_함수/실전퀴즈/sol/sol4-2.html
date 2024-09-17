@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const roles = ['user', 'admin', 'user', 'admin']
+         const emails = ['alice@example.com', 'bob@example.com', 'charlie@example.com', 'david@example.com']
+
+         const adminEmails = roles
+            .map((role, index) => (role === 'admin' ? emails[index] : null)) // 'admin'의 이메일을 추출
+            .filter((email) => email !== null) // null 값 제거
+
+         console.log(adminEmails) // ['bob@example.com', 'david@example.com']
+      </script>
+   </body>
+</html>

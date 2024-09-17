@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const prices = [150, 50, 70, 200]
+
+         const result = prices.map((price) => (price >= 100 ? price : '할인'))
+
+         console.log(result) // [150, "할인", "할인", 200]
+      </script>
+   </body>
+</html>
