@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 전역 변수
+         var globalVar = '나는 전역변수 입니다.'
+
+         function exampleFunction() {
+            // 지역 변수
+            var localVar = '나는 지역변수 입니다.'
+
+            console.log(globalVar) // 전역 변수에 접근 가능
+            console.log(localVar) // 지역 변수에 접근 가능
+         }
+
+         exampleFunction()
+
+         console.log(globalVar) // 전역 변수에 접근 가능
+         console.log(localVar) // 에러: localVar는 함수 밖에서 접근 불가
+      </script>
+   </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         var globalVar = '나는 전역변수 입니다.'
+
+         function exampleFunction() {
+            var localVar = '나는 지역변수 입니다.'
+
+            console.log(globalVar)
+            console.log(localVar)
+         }
+
+         exampleFunction()
+
+         console.log(globalVar)
+         console.log(localVar)
+      </script>
+   </body>
+</html>
