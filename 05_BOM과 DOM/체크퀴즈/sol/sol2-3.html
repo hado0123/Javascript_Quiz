@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <div id="myDiv" style="width: 100px; height: 100px; background-color: lightgray">여기에 마우스를 올려보세요</div>
+
+      <script>
+         const div = document.querySelector('#myDiv')
+
+         div.addEventListener('mouseover', () => {
+            div.style.backgroundColor = 'yellow'
+         })
+
+         div.addEventListener('mouseout', () => {
+            div.style.backgroundColor = 'lightgray'
+         })
+      </script>
+   </body>
+</html>

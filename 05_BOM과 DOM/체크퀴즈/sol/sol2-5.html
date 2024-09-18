@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <label for="fruits">과일을 선택하세요:</label>
+      <select id="fruits">
+         <option value="apple">사과</option>
+         <option value="banana">바나나</option>
+         <option value="orange">오렌지</option>
+      </select>
+
+      <div id="result">선택된 과일: apple</div>
+
+      <script>
+         const selectElement = document.querySelector('#fruits')
+         const resultDiv = document.querySelector('#result')
+
+         selectElement.addEventListener('change', (event) => {
+            const selectedFruit = event.target.value
+            resultDiv.textContent = `선택된 과일: ${selectedFruit}`
+         })
+      </script>
+   </body>
+</html>
