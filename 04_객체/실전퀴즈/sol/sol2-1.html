@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <script>
+         const arr = [
+            {
+               name: '김은아',
+               grade: 'A+',
+               age: 22,
+               email: 'kea@student.com',
+            },
+            {
+               name: '장수민',
+               grade: 'B+',
+               age: 21,
+               email: 'zsm@student.com',
+            },
+            {
+               name: '서우혁',
+               grade: 'A',
+               age: 23,
+               email: 'suh@student.com',
+            },
+            {
+               name: '이수훈',
+               grade: 'F',
+               age: 23,
+               email: 'lsh@student.com',
+            },
+         ]
+
+         for (let student of arr) {
+            const idx = student.email.indexOf('@')
+            const id = student.email.substring(0, idx)
+            console.log(id)
+         }
+
+         /*
+         혹은 map 이용시 아래와 같이 나옴
+
+         const result = arr.map((student) => {
+            const idx = student.email.indexOf('@')
+            const id = student.email.substring(0, idx)
+
+            return id
+         })
+
+         for (let id of result) {
+            console.log(id)
+         }
+         */
+      </script>
+   </head>
+   <body></body>
+</html>
