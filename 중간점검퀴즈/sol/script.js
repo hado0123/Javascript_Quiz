@@ -215,6 +215,20 @@ const result = employees.filter((employee) => {
    }
 })
 
+/*
+   // 혹은
+   // 여기서의 includes 함수는 String 객체의 함수
+   // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/includes
+   
+   const result = employees.filter((employee) => {
+      const livesInSeoul = employee.addr.includes('서울');
+      console.log(livesInSeoul ? '서울에 삽니다.' : '서울에 살지 않습니다.');
+
+      return livesInSeoul;
+   });
+
+*/
+
 console.log(`10번 문제 정답: ${JSON.stringify(result, null, 2)}`)
 
 /*

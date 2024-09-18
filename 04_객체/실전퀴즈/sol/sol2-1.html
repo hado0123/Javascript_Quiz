@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Document</title>
       <script>
-         const arr = [
+         const students = [
             {
                name: '김은아',
                grade: 'A+',
@@ -32,25 +32,21 @@
             },
          ]
 
-         for (let student of arr) {
+         students.forEach((student) => {
             const idx = student.email.indexOf('@')
             const id = student.email.substring(0, idx)
             console.log(id)
-         }
-
-         /*
-         혹은 map 이용시 아래와 같이 나옴
-
-         const result = arr.map((student) => {
-            const idx = student.email.indexOf('@')
-            const id = student.email.substring(0, idx)
-
-            return id
          })
 
-         for (let id of result) {
+         // 혹은 map 이용시 아래와 같이 나옴
+         /*
+         const result = students.map((student) => {
+            const idx = student.email.indexOf('@')
+            const id = student.email.substring(0, idx)
+
             console.log(id)
-         }
+            return id
+         })
          */
       </script>
    </head>

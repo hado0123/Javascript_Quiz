@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Document</title>
       <script>
-         const arr = [
+         const students = [
             {
                name: '김은아',
                grade: 'A+',
@@ -34,10 +34,11 @@
 
          const inputName = prompt('학생 이름 입력')
 
-         const result = arr.filter((student) => student.name == inputName)
-         document.write(
-            `${result[0].name}, ${result[0].grade}, ${result[0].email}`
-         )
+         const result = students
+            .filter((student) => student.name == inputName)
+            .map((student) => {
+               document.write(`${student.name}, ${student.grade}, ${student.email}`)
+            })
       </script>
    </head>
    <body></body>
