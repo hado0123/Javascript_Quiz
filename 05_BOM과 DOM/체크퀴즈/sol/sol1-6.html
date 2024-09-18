@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <h1>이미지</h1>
+      <div class="list"></div>
+      <script>
+         const list = document.querySelector('.list')
+
+         const img = document.createElement('img')
+         img.setAttribute('src', 'https://picsum.photos/300/300')
+         img.setAttribute('alt', '이미지')
+
+         list.appendChild(img)
+      </script>
+   </body>
+</html>

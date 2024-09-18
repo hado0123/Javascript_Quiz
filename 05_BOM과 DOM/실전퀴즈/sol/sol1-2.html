@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <a href="https://www.naver.com/">링크1</a>
+      <a href="https://www.google.com/">링크2</a>
+
+      <script>
+         const links = document.querySelectorAll('a')
+
+         links.forEach((link, index) => {
+            if (index == 1) {
+               link.setAttribute('target', '_blank')
+            }
+         })
+      </script>
+   </body>
+</html>

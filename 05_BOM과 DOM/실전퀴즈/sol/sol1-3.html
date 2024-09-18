@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <div id="container"></div>
+
+      <script>
+         const div = document.querySelector('#container')
+
+         const p = document.createElement('p')
+         p.textContent = '안녕하세요'
+         p.style.color = 'red'
+         p.style.fontWeight = 'bold'
+
+         div.appendChild(p)
+      </script>
+   </body>
+</html>

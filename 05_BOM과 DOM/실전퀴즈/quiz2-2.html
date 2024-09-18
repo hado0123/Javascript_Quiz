@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <input type="text" id="op1" />
+      <select name="oper" id="oper">
+         <option value="option" selected>선택</option>
+         <option value="plus">+</option>
+         <option value="minus">-</option>
+      </select>
+      <input type="text" id="op2" />
+
+      =
+
+      <span id="answer"></span>
+
+      <!-- 자바스크립트 -->
+      <script>
+         const op1 = document.querySelector('#op1')
+         const op2 = document.querySelector('#op2')
+         const selectBox = document.querySelector('#oper')
+         const answer = document.querySelector('#answer')
+      </script>
+   </body>
+</html>
