@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function asyncTask() {
+            return new Promise((resolve, reject) => {
+               setTimeout(() => {
+                  const a = 1
+                  const b = 2
+                  const result = a + b
+
+                  if (result > 10) {
+                     resolve('result는 10보다 큽니다')
+                  } else {
+                     reject('result는 10보다 작습니다')
+                  }
+               }, 1000)
+            })
+         }
+
+         asyncTask()
+            .then((result) => {
+               console.log(result)
+            })
+            .catch((error) => {
+               console.error(error)
+            })
+      </script>
+   </body>
+</html>

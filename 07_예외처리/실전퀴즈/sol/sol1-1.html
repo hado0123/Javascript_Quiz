@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function movie(age) {
+            try {
+               if (age < 18) {
+                  throw 'age exception.' //예외 강제로 발생시킴
+               }
+            } catch (exception) {
+               return //예외 발생시 return문을 만나면서 movie()함수 종료 직전 finally 실행
+            } finally {
+               alert('18세 미만은 관람 불가입니다.')
+            }
+         }
+
+         // 함수를 호출합니다.
+         movie(16)
+      </script>
+   </body>
+</html>

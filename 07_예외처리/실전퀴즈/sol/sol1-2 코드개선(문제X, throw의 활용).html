@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         let deposit = 0 //잔고
+
+         //계좌에 돈 입금
+         function savings(money) {
+            if (money < 0) {
+               throw new Error('below 0 prohibited')
+            }
+            deposit += money
+            console.log(`${money}원 입금이 완료되었습니다.`)
+         }
+
+         //계좌이체
+         function accountTransfer(accountNumber, money) {
+            if (!accountNumber) {
+               //accountNumber이 null, undefined 혹은 빈문자열 일때
+               throw new Error('no accountNumber')
+            }
+
+            if (deposit < money) {
+               throw new Error('insufficient deposit')
+            }
+
+            deposit -= money
+            console.log(`${money}원 이체가 완료되었습니다.`)
+         }
+
+         try {
+            savings(20000)
+            accountTransfer(111, 12000)
+
+            console.log('------------------------')
+            console.log(`잔고: ${deposit}원`)
+         } catch (error) {
+            switch (error.message) {
+               case 'below 0 prohibited':
+                  console.log('0원 이하로 입금할 수 없습니다.')
+                  break
+               case 'no accountNumber':
+                  console.log('계좌번호가 입력되지 않았습니다.')
+                  break
+               case 'insufficient deposit':
+                  console.log('계좌 잔고가 부족합니다.')
+                  break
+               default:
+                  console.log('알 수 없는 오류가 발생했습니다.')
+                  break
+            }
+         }
+      </script>
+   </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         //콜백함수란? 함수의 매개변수로 호출되는 함수로 비동기 작업 후 특정 작업을 수행하도록 해준다.
+
+         console.log('안녕하세요')
+
+         function asynFunc(callBack) {
+            setTimeout(() => {
+               console.log('저는')
+               callBack()
+            }, 1000)
+         }
+
+         asynFunc(() => {
+            console.log('하니입니다.')
+         })
+      </script>
+   </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const originalArray = [1, 2, 3]
+
+         // 얕은 복사가 일어나서 originalArray과 copiedArray가 같은 메모리 주소를 참조하고 있기 때문이다. 스택에는 주소가 저장되어 있고 실제 값은 메모리 주소를 따라가면 힙으로 가면 해당 주소에 저장되어 있다.
+         const copiedArray = [...originalArray]
+         copiedArray.push(4)
+         console.log(originalArray)
+         console.log(copiedArray)
+      </script>
+   </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function asyncTask() {
+            return new Promise((resolve, reject) => {
+               setTimeout(() => {
+                  const a = 1
+                  const b = 2
+                  const result = a + b
+
+                  //현재 promise 상태는 대기 상태
+
+                  if (result > 10) {
+                     resolve('result는 10보다 큽니다') //promise상태가 대기 -> 이행으로 변경
+                  } else {
+                     //result는 10보다 작으므로 거짓
+                     reject('result는 10보다 작습니다') //promise상태가 대기 -> 거부로 변경
+                  }
+               }, 1000)
+            })
+         }
+
+         asyncTask()
+            .then((result) => {
+               console.log(result) //promise상태가 이행으로 변경되면 then 실행
+            })
+            .catch((error) => {
+               //promise 상태가 거부로 변경되면 catch 실행
+               console.error(error)
+            })
+      </script>
+   </body>
+</html>

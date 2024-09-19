@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 동기: 코드가 순서대로 실행되는것. 한 작업이 완료되기 전까지 다음 작업을 시작하지 않음.
+         // 비동기: 코드가 순서대로 실행되지 않음. 작업이 시작된 후 그 작업이 완료되기를 기다리지 않고 다음 작업을 실행.
+
+         //아래코드가 비동기인 이유: 코드가 안녕하세요 -> 저는 -> 하니입니다. 이 순서대로 실행되지 않고 setTimeout이 1초 뒤에 실행되어 비동기로 실행된다
+         console.log('안녕하세요')
+
+         setTimeout(() => {
+            console.log('저는')
+         }, 1000)
+
+         console.log('하니입니다.')
+      </script>
+   </body>
+</html>
