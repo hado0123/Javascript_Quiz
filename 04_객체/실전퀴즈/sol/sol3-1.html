@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const data = {
+            user: {
+               name: '김철수',
+               age: 30,
+               email: 'chulsoo@example.com',
+               address: {
+                  city: '서울',
+                  district: '강남구',
+                  street: '테헤란로 123',
+                  postalCode: '06044',
+               },
+               hobbies: ['독서', '등산', '영화 감상'],
+               joinedDate: '2023-08-15',
+            },
+            products: [
+               {
+                  productName: '노트북',
+                  brand: '삼성',
+                  price: 1500000,
+                  inStock: true,
+               },
+               {
+                  productName: '스마트폰',
+                  brand: '애플',
+                  price: 1200000,
+                  inStock: false,
+               },
+            ],
+         }
+
+         const user = data.user
+
+         user.hobbies.forEach((hobby, index) => {
+            console.log(`${index + 1}. ${hobby}`)
+         })
+      </script>
+   </body>
+</html>

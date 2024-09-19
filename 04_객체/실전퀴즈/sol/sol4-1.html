@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const weatherData = [
+            { date: '2023-09-15', temperature: 24, precipitationChance: 10 },
+            { date: '2023-09-16', temperature: 28, precipitationChance: 60 },
+            { date: '2023-09-17', temperature: 22, precipitationChance: 5 },
+            { date: '2023-09-18', temperature: 30, precipitationChance: 80 },
+            { date: '2023-09-19', temperature: 26, precipitationChance: 20 },
+         ]
+
+         const hotDays = weatherData
+            .filter((day) => day.temperature >= 25)
+            .forEach((day) => {
+               console.log(`날짜: ${day.date}, 기온: ${day.temperature}도`)
+            })
+      </script>
+   </body>
+</html>
