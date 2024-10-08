@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>예제</title>
+   </head>
+   <body>
+      <input type="text" /> cm =
+      <span></span>
+      <select>
+         <option value="10">mm</option>
+         <option value="0.01">m</option>
+         <option value="0.393701">inch</option>
+      </select>
+
+      <script>
+         // cm를 여러단위로 변환하는 프로그램
+         let currentValue
+         let constValue = 10
+
+         const select = document.querySelector('select')
+         const input = document.querySelector('input')
+         const span = document.querySelector('span')
+
+         const calculate = () => {
+            span.textContent = (currentValue * constValue).toFixed(2)
+         }
+
+         select.addEventListener('change', (event) => {
+            const options = event.currentTarget.options
+            const index = event.currentTarget.options.selectedIndex
+            constValue = Number(options[index].value)
+            calculate()
+         })
+
+         input.addEventListener('keyup', (event) => {
+            currentValue = Number(event.currentTarget.value)
+            calculate()
+         })
+      </script>
+   </body>
+</html>

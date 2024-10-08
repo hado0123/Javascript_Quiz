@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>예제</title>
+   </head>
+   <body>
+      <input type="text" /> cm =
+      <span></span>
+      <select>
+         <option value="10">mm</option>
+         <option value="0.01">m</option>
+         <option value="0.393701">inch</option>
+      </select>
+
+      <script>
+         let currentValue //사용자가 입력한 값을 저장하는 변수
+         let constValue = 10 // select박스에서 선택한 option값의 value를 저장하는 변수 -> select 박스를 선택시 이 변수의 값을 변화시킨다
+
+         const select = document.querySelector('select')
+         const input = document.querySelector('input')
+         const span = document.querySelector('span')
+      </script>
+   </body>
+</html>
