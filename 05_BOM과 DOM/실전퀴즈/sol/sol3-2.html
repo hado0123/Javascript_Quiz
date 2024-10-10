@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>신문기사 목록</title>
+      <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+         }
+
+         .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+         }
+
+         .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+         }
+
+         .card:hover {
+            transform: translateY(-5px);
+         }
+
+         .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+         }
+
+         .card-content {
+            padding: 20px;
+         }
+
+         .card-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #333;
+         }
+
+         .card-content p {
+            font-size: 1.4rem;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.5;
+         }
+
+         .card-content .meta {
+            font-size: 1.2rem;
+            color: #888;
+            margin-bottom: 10px;
+         }
+
+         .card-content a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.2s;
+         }
+
+         .card-content a:hover {
+            background-color: #0056b3;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>오늘의 신문기사</h1>
+      <div class="container" id="news-container">
+         <!-- 신문기사 카드가 여기에 동적으로 추가됩니다. -->
+      </div>
+
+      <script>
+         // 가상의 신문기사 데이터
+         const newsData = {
+            articles: [
+               {
+                  id: 1,
+                  title: '경제 성장률 5년 만에 최고치 기록',
+                  author: '이정민 기자',
+                  date: '2024-10-08',
+                  summary: '올해 경제 성장률이 5년 만에 최고치를 기록했습니다. 전문가들은 코로나19 이후 경제 회복이 빠르게 진행된 것으로 분석하고 있습니다.',
+                  img: 'https://via.placeholder.com/300x180',
+                  link: '#',
+               },
+               {
+                  id: 2,
+                  title: '기후 변화로 인한 농업 피해 심각',
+                  author: '박현수 기자',
+                  date: '2024-10-07',
+                  summary: '기후 변화로 인한 농업 피해가 전 세계적으로 심각해지고 있습니다. 농업 전문가들은 다양한 대응책을 제시하고 있습니다.',
+                  img: 'https://via.placeholder.com/300x180',
+                  link: '#',
+               },
+               {
+                  id: 3,
+                  title: '신기술, 의료 산업의 패러다임을 바꾸다',
+                  author: '김다영 기자',
+                  date: '2024-10-05',
+                  summary: '새로운 의료 기술이 기존 산업의 판도를 바꾸고 있습니다. 이 기술이 가져올 변화와 그에 따른 사회적 영향을 분석합니다.',
+                  img: 'https://via.placeholder.com/300x180',
+                  link: '#',
+               },
+               {
+                  id: 4,
+                  title: '스포츠: 올림픽 금메달리스트 인터뷰',
+                  author: '최수빈 기자',
+                  date: '2024-10-03',
+                  summary: '이번 올림픽에서 금메달을 수상한 선수의 인터뷰를 통해 그의 훈련 과정과 열정을 확인할 수 있습니다.',
+                  img: 'https://via.placeholder.com/300x180',
+                  link: '#',
+               },
+            ],
+         }
+
+         // 컨테이너 요소 가져오기
+         const container = document.querySelector('#news-container')
+
+         // 신문기사 데이터를 바탕으로 카드 생성 및 추가
+         const articles = newsData.articles
+
+         articles.forEach((article) => {
+            const card = document.createElement('div')
+            card.className = 'card'
+
+            card.innerHTML = `
+                  <img src="${article.img}" alt="${article.title}">
+                  <div class="card-content">
+                     <h2>${article.title}</h2>
+                     <p class="meta">${article.author} | ${article.date}</p>
+                     <p>${article.summary}</p>
+                     <a href="${article.link}">기사 읽기</a>
+                  </div>
+               `
+
+            container.appendChild(card)
+         })
+      </script>
+   </body>
+</html>

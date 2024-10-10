@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>자유게시판</title>
+      <style>
+         /* 초기화 CSS */
+         * {
+            margin: 0;
+            padding: 0;
+         }
+
+         html {
+            font-size: 10px;
+         }
+
+         ul,
+         li {
+            list-style: none;
+         }
+
+         a {
+            text-decoration: none;
+            color: inherit;
+         }
+
+         /* 공통 - 버튼 */
+         .bt_wrap {
+            margin-top: 30px;
+            text-align: center;
+         }
+
+         .bt_wrap a {
+            display: inline-block;
+            min-width: 80px;
+            margin-left: 10px;
+            padding: 10px;
+            border: 1px solid #000;
+            border-radius: 2px;
+            font-size: 1.4rem;
+            text-align: center;
+         }
+
+         .bt_wrap a:hover {
+            text-decoration: underline;
+         }
+
+         /* 글쓰기 버튼 오른쪽 정렬 */
+         .bt_list {
+            text-align: right;
+         }
+
+         /* index.html */
+         .wrap {
+            width: 1000px;
+            margin: 0 auto;
+         }
+
+         .board_list {
+            width: 100%;
+            border-top: 1px solid #444;
+            border-collapse: collapse;
+            font-size: 1.5rem;
+         }
+
+         .board_list caption {
+            padding: 30px;
+         }
+
+         .board_list th,
+         .board_list td {
+            border-bottom: 1px solid #444;
+            padding: 10px;
+            text-align: center;
+         }
+
+         .board_list td.title > a:hover {
+            text-decoration: underline;
+         }
+
+         .board_page {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+         }
+
+         .board_page a {
+            text-align: center;
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            box-sizing: border-box;
+            line-height: 32px;
+         }
+
+         .board_page a:hover {
+            text-decoration: underline;
+         }
+
+         .board_page a.bt {
+            font-size: 1.2rem;
+            letter-spacing: -1px;
+         }
+
+         .board_page a.num {
+            font-size: 1.4rem;
+         }
+
+         .board_page a.num.on {
+            border-color: #000;
+            background-color: #000;
+            color: #fff;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="wrap">
+         <table class="board_list">
+            <caption>
+               <h1>자유게시판</h1>
+            </caption>
+            <thead>
+               <tr>
+                  <th>번호</th>
+                  <th>제목</th>
+                  <th>글쓴이</th>
+                  <th>작성일</th>
+                  <th>조회수</th>
+               </tr>
+            </thead>
+            <tbody id="board-tbody">
+               <!-- 게시글 데이터가 동적으로 여기에 추가됩니다. -->
+            </tbody>
+         </table>
+
+         <!-- 글쓰기 버튼 -->
+         <div class="bt_wrap bt_list">
+            <a href="./write.html">글쓰기</a>
+         </div>
+
+         <!-- 페이징 버튼 -->
+         <div class="board_page">
+            <a href="#" class="bt first">&lt;&lt;</a>
+            <a href="#" class="bt prev">&lt;</a>
+            <a href="#" class="num on">1</a>
+            <a href="#" class="num">2</a>
+            <a href="#" class="num">3</a>
+            <a href="#" class="num">4</a>
+            <a href="#" class="num">5</a>
+            <a href="#" class="bt next">&gt;</a>
+            <a href="#" class="bt last">&gt;&gt;</a>
+         </div>
+      </div>
+
+      <script>
+         // 가상의 게시판 JSON 데이터
+         const boardData = {
+            posts: [
+               {
+                  id: 1,
+                  title: '첫 번째 게시글입니다',
+                  author: '김철수',
+                  date: '2024.10.01',
+                  views: 12,
+               },
+               {
+                  id: 2,
+                  title: '두 번째 게시글입니다',
+                  author: '이영희',
+                  date: '2024.10.02',
+                  views: 20,
+               },
+               {
+                  id: 3,
+                  title: '세 번째 게시글입니다',
+                  author: '박민수',
+                  date: '2024.10.03',
+                  views: 8,
+               },
+               {
+                  id: 4,
+                  title: '네 번째 게시글입니다',
+                  author: '정하늘',
+                  date: '2024.10.04',
+                  views: 15,
+               },
+               {
+                  id: 5,
+                  title: '다섯 번째 게시글입니다',
+                  author: '최수지',
+                  date: '2024.10.05',
+                  views: 5,
+               },
+               {
+                  id: 6,
+                  title: '여섯 번째 게시글입니다',
+                  author: '홍길동',
+                  date: '2024.10.06',
+                  views: 18,
+               },
+            ],
+         }
+
+         // 게시판 tbody 요소 가져오기
+         const tbody = document.querySelector('#board-tbody')
+
+         const posts = boardData.posts
+
+         /* 
+            게시판 데이터를 바탕으로 테이블 행을 생성하고 추가
+            아래와 같은 형태로 #board-tbody에 추가
+
+               <tr>
+                  <td>1</td>
+                  <td class="title"><a href="./view.html">첫 번째 게시글입니다</a></td>
+                  <td>김철수</td>
+                  <td>2024.10.01</td>
+                  <td>12</td>
+               </tr>
+
+         */
+      </script>
+   </body>
+</html>

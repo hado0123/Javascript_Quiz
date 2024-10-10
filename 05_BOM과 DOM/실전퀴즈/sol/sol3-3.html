@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>쇼핑몰 상품 목록</title>
+      <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+         }
+
+         .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+         }
+
+         .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+         }
+
+         .card:hover {
+            transform: translateY(-5px);
+         }
+
+         .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+         }
+
+         .card-content {
+            padding: 20px;
+         }
+
+         .card-content h2 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #333;
+         }
+
+         .card-content p {
+            font-size: 1.2rem;
+            color: #777;
+            margin-bottom: 15px;
+            line-height: 1.5;
+         }
+
+         .card-content .price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 15px;
+         }
+
+         .card-content button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+         }
+
+         .card-content button:hover {
+            background-color: #218838;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>쇼핑몰 상품 목록</h1>
+      <div class="container" id="product-container">
+         <!-- 상품 카드가 여기에 동적으로 추가됩니다. -->
+      </div>
+
+      <script>
+         // 가상의 쇼핑몰 상품 데이터
+         const productData = {
+            products: [
+               {
+                  id: 1,
+                  name: '캐주얼 티셔츠',
+                  price: '₩25,000',
+                  description: '부드러운 면 소재로 편안한 착용감을 자랑하는 캐주얼 티셔츠입니다.',
+                  img: 'https://via.placeholder.com/300x200',
+               },
+               {
+                  id: 2,
+                  name: '데님 청바지',
+                  price: '₩45,000',
+                  description: '스타일리시한 핏과 편안함을 동시에 제공하는 데님 청바지입니다.',
+                  img: 'https://via.placeholder.com/300x200',
+               },
+               {
+                  id: 3,
+                  name: '스니커즈',
+                  price: '₩60,000',
+                  description: '매일 신기 좋은 기본 스타일의 스니커즈입니다.',
+                  img: 'https://via.placeholder.com/300x200',
+               },
+               {
+                  id: 4,
+                  name: '여성 가디건',
+                  price: '₩35,000',
+                  description: '가볍고 따뜻한 소재로 제작된 여성 가디건입니다.',
+                  img: 'https://via.placeholder.com/300x200',
+               },
+               {
+                  id: 5,
+                  name: '가죽 백팩',
+                  price: '₩85,000',
+                  description: '실용적인 수납공간과 세련된 디자인이 특징인 가죽 백팩입니다.',
+                  img: 'https://via.placeholder.com/300x200',
+               },
+            ],
+         }
+
+         // 컨테이너 요소 가져오기
+         const container = document.querySelector('#product-container')
+
+         // 상품 데이터를 바탕으로 카드 생성 및 추가
+         productData.products.forEach((product) => {
+            const card = document.createElement('div')
+            card.className = 'card'
+
+            card.innerHTML = `
+                  <img src="${product.img}" alt="${product.name}">
+                  <div class="card-content">
+                     <h2>${product.name}</h2>
+                     <p class="price">${product.price}</p>
+                     <p>${product.description}</p>
+                     <button type="button">구매하기</button>
+                  </div>
+               `
+
+            container.appendChild(card)
+         })
+      </script>
+   </body>
+</html>
